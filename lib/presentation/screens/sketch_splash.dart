@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex_app/presentation/widgets/background_circles_widget.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class SketchSplash extends StatefulWidget {
+  const SketchSplash({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SketchSplash> createState() => _SketchSplashState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SketchSplashState extends State<SketchSplash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
