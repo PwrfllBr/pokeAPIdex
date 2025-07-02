@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex_app/model/pokemon_type.dart';
 import 'package:pokedex_app/presentation/widgets/pokeball_back_widget.dart';
 import 'package:pokedex_app/presentation/widgets/pokemon_type_widget.dart';
 import 'package:pokedex_app/providers/pokemon_detail_provider.dart';
@@ -35,11 +36,12 @@ class _PokemonDetailsScreenState extends State<PokemonDetailsScreen> with Ticker
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     final String pokemonFormattedId = pokemonDetailProvider.pickedPokemon!.id.toString().padLeft(3,'0');
+    final PokemonType mainType = pokemonDetailProvider.pickedPokemon!.types.first;
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 112, 233, 116),
+      backgroundColor: mainType.altColor1,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 112, 233, 116),
+        backgroundColor: mainType.altColor1,
         actions: [
           IconButton(
             onPressed: (){},
@@ -51,8 +53,8 @@ class _PokemonDetailsScreenState extends State<PokemonDetailsScreen> with Ticker
           Positioned.fill(child: 
             CustomPaint(
               painter: PokeballBackWidget(
-                color: Color.fromARGB(100, 179, 255, 182),
-                altColor: Color.fromARGB(255, 112, 233, 116)),)),
+                color: mainType.altColor2,
+                altColor: mainType.altColor1),)),
           Padding(
               padding: EdgeInsets.fromLTRB(25, 0, 25, 25),
               child: Column(
